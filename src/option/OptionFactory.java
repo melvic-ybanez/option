@@ -1,14 +1,14 @@
 package option;
 
 
-public class OptionFactory {
+public final class OptionFactory {
 	private OptionFactory() { }
 	
 	public static <T> Option<T> build(T value) {
-		Option<T> option = new None<>();
-		if (value != null) {
-			option = new Some<>(value);
+		if (value == null) { 
+			return new None<>();
+		} else {
+			return new Some<>(value);
 		}
-		return option;
 	}
 }

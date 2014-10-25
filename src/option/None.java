@@ -7,11 +7,6 @@ public class None<T> implements Option<T> {
 	
 	@Override
 	public T getValue() {
-		try {
-			throw new IllegalAccessException("None type has no value");
-		} catch (IllegalAccessException ex) {
-			System.exit(-1);
-		}
 		return null;
 	}
 	
